@@ -1,0 +1,396 @@
+#created on: Mar 13, 2012
+package org.sample
+
+import com.sample.DroolsTest.*;
+import com.sample.Location;
+import com.sample.Topic;
+import com.sample.Topics;
+import java.util.List;
+import java.util.LinkedList;
+import java.util.HashMap;
+import java.util.Map;
+
+#list any import classes here.
+
+Introduce fact "Information" with property "content" as list
+Set keywords of fact "Information" to "information, knowledge, familiariy, events"
+
+Introduce fact "Maps" with property "content" as list
+Set keywords of fact "Maps" to "maps, visualize, display"
+
+Introduce fact "Charts" with property "content" as list
+Set keywords of fact "Charts" to "charts, visualize, display"
+
+Introduce fact "PieChart" with property "content" as list
+Set keywords of fact "PieChart" to "piechart, charts, visualize, display"
+
+Introduce fact "LineChart" with property "content" as list
+Set keywords of fact "LineChart" to "linechart, charts, visualize, display"
+
+Introduce fact "BarChart" with property "content" as list
+Set keywords of fact "BarChart" to "barchart, charts, visualize, display"
+
+Introduce fact "Histogram" with property "content" as list
+Set keywords of fact "Histogram" to "histogram, charts, visualize, display"
+
+Introduce fact "AreaChart" with property "content" as list
+Set keywords of fact "AreaChart" to "areaChart, charts, visualize, display"
+
+Introduce fact "OtherCharts" with property "content" as list
+Set keywords of fact "OtherCharts" to "charts, visualize, display"
+
+Introduce fact "Tables" with property "content" as list
+Set keywords of fact "Tables" to "Tables, visualize, display"
+
+Introduce fact "WebCam" with property "content" as list
+Set keywords of fact "WebCam" to "web camera, camera"
+
+Introduce fact "ContinueFurther" with property "content" as list
+Set keywords of fact "ContinueFurther" to "continue"
+
+Introduce fact "Communication" with property "content" as list
+Set keywords of fact "Communication" to "communication, conversation"
+
+Introduce fact "CommunicationTool" with property "content" as list
+Set keywords of fact "CommunicationTool" to "communication tool, amusement, fun"
+
+Introduce fact "TeleCommunication" with property "content" as list
+Set keywords of fact "TeleCommunication" to "telephone communication, communication, functionality, telco"
+
+Introduce fact "Collaboration" with property "content" as list
+Set keywords of fact "Collaboration" to "collaboration, communication"
+
+Introduce fact "InstantMessaging" with property "content" as list
+Set keywords of fact "InstantMessaging" to "messaging, chat, communication, collaboration, text"
+
+Introduce fact "OtherCommunicationTools" with property "content" as list
+Set keywords of fact "OtherCommunicationTools" to "communication tool, amusement, fun"
+
+Introduce fact "TelephoneConference" with property "content" as list
+Set keywords of fact "TelephoneConference" to "telephone conference, teleconference, call, phone, audio, telco"
+
+Introduce fact "VideoConference" with property "content" as list
+Set keywords of fact "VideoConference" to "video conference, call, phone, video, telco"
+
+Introduce fact "TelephoneCall" with property "content" as list
+Set keywords of fact "TelephoneCall" to "telephone, call, phone, audio, telco"
+
+Introduce fact "VideoCall" with property "content" as list
+Set keywords of fact "VideoCall" to "video call, call, video, phone, telco"
+
+Introduce fact "MMSMessaging" with property "content" as list
+Set keywords of fact "MMSMessaging" to "mms messaging, mms, messaging, telco, video"
+
+Introduce fact "SMSMessaging" with property "content" as list
+Set keywords of fact "SMSMessaging" to "sms messaging, sms, messaging, telco, text, text messaging, texting"
+
+Introduce fact "CollaborativeTextEditing" with property "content" as list
+Set keywords of fact "CollaborativeTextEditing" to "collaboration, communication, text editing, editing"
+
+Introduce fact "CollaborativeDrawing" with property "content" as list
+Set keywords of fact "CollaborativeDrawing" to "collaboration, communication, drawing"
+
+Introduce fact "OtherCollaborationTools" with property "content" as list
+Set keywords of fact "OtherCollaborationTools" to "collaboration, communication"
+
+Introduce fact "Chat" with property "content" as list
+Set keywords of fact "Chat" to "chat, collaboration, communication, network, social"
+
+Introduce fact "Twitter" with property "content" as list
+Set keywords of fact "Twitter" to "collaboration, social, communication, network, social feed, twitter, social trends"
+
+Introduce fact "Facebook" with property "content" as list
+Set keywords of fact "Facebook" to "collaboration, social, communication, network, social feed, facebook, social trends"
+
+Introduce fact "OtherInstantMessagingTools" with property "content" as list
+Set keywords of fact "OtherInstantMessagingTools" to "collaboration, social, communication, network"
+
+Introduce fact "ExtraInfo" with property "content" as list
+Set keywords of fact "ExtraInfo" to "information, data"
+
+Introduce fact "MoreDetails" with property "content" as list
+Set keywords of fact "MoreDetails" to "information, data, details"
+
+Introduce fact "Entertainment" with property "content" as list
+Set keywords of fact "Entertainment" to "entertainment, fun"
+
+Introduce fact "Creativity" with property "content" as list
+Set keywords of fact "Creativity" to "data, creativity"
+
+Introduce fact "OtherDetails" with property "content" as list
+Set keywords of fact "OtherDetails" to "details, data"
+
+Introduce fact "EndStatement" with property "content" as list
+Set keywords of fact "EndStatement" to "endstatement, end, finish"
+
+expander AutomaticComposition.dsl
+
+#declare any global variables here
+global com.sample.UserModel userModel;
+
+
+#------------------------------- RULES ---------------------------#
+rule "Start"	
+    when
+        There is a StartEvent
+    then
+        Ask Yes-No Question: "Are you looking for information (y/n)?"
+        if(Answer is yes)
+			Remember fact: Information()
+end
+
+rule "Information"
+	salience 100
+	when
+		There is a Information
+	then
+		Ask For Topics: "On which topics (comma-separated list) - <Enter maximum 3 topics>?"
+		Remember fact: Topics(answer)
+end
+
+rule "VisualizeTopic1"
+	salience 99
+	when
+		There is a Topics
+		One topic entered of above fact
+	then		
+		Ask Question: "How do you want to visualize %s (a - map, b - chart, c - table, d - webcam)?" with fact.getSpecificTopic(0)
+		if(Answer is "a")
+			Remember fact: Maps()
+		if(Answer is "b")
+			Remember fact: Charts()
+		if(Answer is "c")
+			Remember fact: Tables()
+		if(Answer is "d")
+			Remember fact: WebCam()
+end
+
+rule "VisualizeTopic2"
+	salience 98
+	when
+		There is a Topics
+		One topic entered of above fact
+		Two topics entered of above fact
+	then		
+		Ask Question: "How do you want to visualize %s (a - map, b - chart, c - table, d - webcam)?" with fact.getSpecificTopic(1)
+		if(Answer is "a")
+			Remember fact: Maps()
+		if(Answer is "b")
+			Remember fact: Charts()
+		if(Answer is "c")
+			Remember fact: Tables()
+		if(Answer is "d")
+			Remember fact: WebCam()
+end
+
+rule "VisualizeTopic3"
+	salience 97
+	when
+		There is a Topics
+		One topic entered of above fact
+		Two topics entered of above fact
+		Three topics entered of above fact
+	then		
+		Ask Question: "How do you want to visualize %s (a - map, b - chart, c - table, d - webcam)?" with fact.getSpecificTopic(2)
+		if(Answer is "a")
+			Remember fact: Maps()
+		if(Answer is "b")
+			Remember fact: Charts()
+		if(Answer is "c")
+			Remember fact: Tables()
+		if(Answer is "d")
+			Remember fact: WebCam()
+end
+
+rule "Charts"
+	salience 99
+	when
+		There is a Charts
+	then
+		Ask Question: "Which type of chart you are looking for (a - pie chart, b - line chart, c - bar chart, d - histogram, e - area chart, f - others)?"
+		if(Answer is "a")
+			Remember fact: PieChart()
+		if(Answer is "b")
+			Remember fact: LineChart()
+		if(Answer is "c")
+			Remember fact: BarChart()
+		if(Answer is "d")
+			Remember fact: Histogram()
+		if(Answer is "e")
+			Remember fact: AreaChart()
+		if(Answer is "f")
+			Remember fact: OtherCharts()
+end
+
+rule "OtherCharts"
+	salience 98
+	when
+		There is a OtherCharts
+	then
+		Ask Question with Multiple Choice: "Please provide the type of the chart you prefer (comma-separated list)?"
+		Put answer to Content list of above fact
+end
+
+rule "ContinueFurther"
+	salience 96
+	when
+		There is a Topics
+	then
+		Ask Yes-No Question: "Do you need anything else (y/n)?"
+		if(Answer is yes)
+			Remember fact: ContinueFurther()		
+end
+
+rule "Communication"
+	salience 95
+	when
+		There is a ContinueFurther
+	then
+		Ask Yes-No Question: "Do you need any communication tools (y/n)?"
+		if(Answer is yes)
+			Remember fact: CommunicationTool()
+end
+
+rule "CommunicationTool"	
+	salience 94
+	when
+		There is a CommunicationTool
+	then
+		Ask Question: "Which type of communication tool would you prefer (a - telecommunication, b - collaboration, c - instant messaging, d - others)?"
+		if(Answer is "a")
+			Remember fact: TeleCommunication()
+		if(Answer is "b")
+			Remember fact: Collaboration()
+		if(Answer is "c")
+			Remember fact: InstantMessaging()
+		if(Answer is "d")
+			Remember fact: OtherCommunicationTools()
+end
+
+rule "TeleCommunication"	
+	salience 93
+	when
+		There is a TeleCommunication
+	then
+		Ask Question: "Which mode of telecommunication you would prefer (a - telephone conference, b - video conference, c - telephone call, d - video call, e - mms messaging, f - sms messaging)?"
+		if(Answer is "a")
+			Remember fact: TelephoneConference()
+		if(Answer is "b")
+			Remember fact: VideoConference()
+		if(Answer is "c")
+			Remember fact: TelephoneCall()
+		if(Answer is "d")
+			Remember fact: VideoCall()
+		if(Answer is "e")
+			Remember fact: MMSMessaging()
+		if(Answer is "f")
+			Remember fact: SMSMessaging()
+end
+
+rule "Collaboration"
+	salience 93
+	when
+		There is a Collaboration
+	then
+		Ask Question: "Which collaboration tool would you prefer (a - text editing, b - drawing, c - others)?"
+		if(Answer is "a")
+			Remember fact: CollaborativeTextEditing()
+		if(Answer is "b")
+			Remember fact: CollaborativeDrawing()
+		if(Answer is "c")
+			Remember fact: OtherCollaborationTools()
+end
+
+rule "OtherCollaborationTools"
+	salience 92
+	when
+		There is a OtherCollaborationTools
+	then
+		Ask Question with Multiple Choice: "Please provide the name of the collaboration tool you prefer (comma-separated list)?"
+		Put answer to Content list of above fact
+end
+
+rule "InstantMessaging"
+	salience 91
+	when
+		There is a InstantMessaging
+	then
+		Ask Question: "Which instant messaging tool would you prefer (a - twitter, b - facebook, c - chat, d - others)?"
+		if(Answer is "a")
+			Remember fact: Twitter()
+		if(Answer is "b")
+			Remember fact: Facebook()
+		if(Answer is "c")
+			Remember fact: Chat()
+		if(Answer is "d")
+			Remember fact: OtherInstantMessagingTools()
+end
+
+rule "Chat"
+	salience 90
+	when
+		There is a Chat
+	then
+		Ask Question with Multiple Choice: "Please provide the name of the chat you want to use (comma-separated list)?"
+		Put answer to Content list of above fact
+end
+
+rule "OtherInstantMessagingTools"
+	salience 90
+	when
+		There is a OtherInstantMessagingTools
+	then
+		Ask Question with Multiple Choice: "Please provide the name of the instant messaging tool you prefer (comma-separated list)?"
+		Put answer to Content list of above fact
+end
+
+
+rule "OtherCommunicationTools"
+	salience 92
+	when
+		There is a OtherCommunicationTools
+	then
+		Ask Question with Multiple Choice: "Please provide the name of the communication tool you prefer (comma-separated list)?"
+		Put answer to Content list of above fact
+end
+
+rule "MoreInfo"
+	salience 89
+	when
+		There is a Information
+	then
+		Ask Yes-No Question: "Do you want to compose the workspace now (y/n)?"
+		if(Answer is no)
+			Remember fact: MoreDetails()
+end
+
+rule "MoreDetails"	
+	salience 88
+	when
+		There is a MoreDetails		
+	then
+		Ask Question: "Ok, then are you looking for some (a - entertainment, b - creativity, c - others)?"
+		if(Answer is "a")
+			Remember fact: Entertainment()
+		if(Answer is "b")
+			Remember fact: Creativity()
+		if(Answer is "c")
+			Remember fact: OtherDetails()
+end
+
+rule "OtherDetails"
+	salience 87
+	when
+		There is a OtherDetails
+	then
+		Ask Question with Multiple Choice: "Please mention here, what else you are looking for (comma-separated list)?"		
+		Put answer to Content list of above fact
+end
+
+rule "EndStatement"
+	salience 86
+	when
+		There is a Information		
+	then
+		Print Result : "Ok, composing the workspace"
+end

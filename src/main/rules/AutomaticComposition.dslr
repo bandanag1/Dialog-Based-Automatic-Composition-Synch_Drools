@@ -1,0 +1,617 @@
+#created on: Mar 13, 2012
+package org.sample
+
+import com.sample.DroolsTest.*;
+import com.sample.Location;
+import java.util.List;
+import java.util.LinkedList;
+import java.util.HashMap;
+import java.util.Map;
+
+#list any import classes here.
+
+Introduce fact "Need" with property "content" as list
+Set keywords of fact "Need" to "need, search, look, want"
+
+Introduce fact "Creativity" with property "content" as list
+Set keywords of fact "Creativity" to "creativity, construct, imagine"
+
+Introduce fact "Information" with property "content" as list
+Set keywords of fact "Information" to "information, knowledge, familiariy, events"
+
+Introduce fact "Entertainment" with property "content" as list
+Set keywords of fact "Entertainment" to "entertainment, amusement, fun"
+
+Introduce fact "EntertainmentTool" with property "content" as list
+Set keywords of fact "EntertainmentTool" to "entertainment tool, amusement, fun"
+
+Introduce fact "Communication" with property "content" as list
+Set keywords of fact "Communication" to "communication, conversation"
+
+Introduce fact "CommunicationTool" with property "content" as list
+Set keywords of fact "CommunicationTool" to "communication tool, amusement, fun"
+
+Introduce fact "TextEditing" with property "content" as list
+Set keywords of fact "TextEditing" to "textediting, editing"
+
+Introduce fact "Drawing" with property "content" as list
+Set keywords of fact "Drawing" to "drawing, sketch, writing"
+
+Introduce fact "Maps" with property "content" as list
+Set keywords of fact "Maps" to "map, direction, gps"
+
+Introduce fact "Chart" with property "content" as list
+Set keywords of fact "Chart" to "chart, visualize, information"
+
+Introduce fact "Table" with property "content" as list
+Set keywords of fact "Table" to "table, visualize, information"
+
+Introduce fact "Movie" with property "content" as list
+Set keywords of fact "Movie" to "movie, film, play, theatre, videos"
+
+Introduce fact "Games" with property "content" as list
+Set keywords of fact "Games" to "games, video games, xbox, wii"
+
+Introduce fact "Chat" with property "content" as list
+Set keywords of fact "Chat" to "chat, social"
+
+Introduce fact "Music" with property "content" as list
+Set keywords of fact "Music" to "music, song, audio"
+
+Introduce fact "TeleCommunication" with property "content" as list
+Set keywords of fact "TeleCommunication" to "telephone communication, communication, functionality, telco"
+
+Introduce fact "TelephoneConference" with property "content" as list
+Set keywords of fact "TelephoneConference" to "telephone conference, teleconference, call, phone, audio, telco"
+
+Introduce fact "TeleConfServiceProvider" with property "content" as list
+Set keywords of fact "TeleConfServiceProvider" to "service provider, telco provider"
+
+Introduce fact "SpecificTeleConfServiceProvider" with property "content" as list
+Set keywords of fact "SpecificTeleConfServiceProvider" to "service provider, telco provider"
+
+Introduce fact "NoTeleConfServiceProvider" with property "content" as list
+Set keywords of fact "NoTeleConfServiceProvider" to "service provider, telco provider"
+
+Introduce fact "VideoConference" with property "content" as list
+Set keywords of fact "VideoConference" to "video conference, call, phone, video, telco"
+
+Introduce fact "VideoConfServiceProvider" with property "content" as list
+Set keywords of fact "VideoConfServiceProvider" to "video conference, call, phone, video, telco"
+
+Introduce fact "SpecificVideoConfServiceProvider" with property "content" as list
+Set keywords of fact "SpecificVideoConfServiceProvider" to "service provider, telco provider"
+
+Introduce fact "NoVideoConfServiceProvider" with property "content" as list
+Set keywords of fact "NoVideoConfServiceProvider" to "service provider, telco provider"
+
+Introduce fact "TelephoneCall" with property "content" as list
+Set keywords of fact "TelephoneCall" to "telephone, call, phone, audio, telco"
+
+Introduce fact "AudioCallServiceProvider" with property "content" as list
+Set keywords of fact "AudioCallServiceProvider" to "audio call, service provider, telco provider"
+
+Introduce fact "SpecificAudioCallServiceProvider" with property "content" as list
+Set keywords of fact "SpecificAudioCallServiceProvider" to "audio call, service provider, telco provider"
+
+Introduce fact "NoAudioCallServiceProvider" with property "content" as list
+Set keywords of fact "NoAudioCallServiceProvider" to "audio call, service provider, telco provider"
+
+Introduce fact "VideoCall" with property "content" as list
+Set keywords of fact "VideoCall" to "video call, call, video, phone, telco"
+
+Introduce fact "VideoCallServiceProvider" with property "content" as list
+Set keywords of fact "VideoCallServiceProvider" to "video call, service provider, telco provider"
+
+Introduce fact "SpecificVideoCallServiceProvider" with property "content" as list
+Set keywords of fact "SpecificVideoCallServiceProvider" to "video call, service provider, telco provider"
+
+Introduce fact "NoVideoCallServiceProvider" with property "content" as list
+Set keywords of fact "NoVideoCallServiceProvider" to "video call, service provider, telco provider"
+
+Introduce fact "MMSMessaging" with property "content" as list
+Set keywords of fact "MMSMessaging" to "mms messaging, mms, messaging, telco, video"
+
+Introduce fact "MMSServiceProvider" with property "content" as list
+Set keywords of fact "MMSServiceProvider" to "mms, service provider, telco provider"
+
+Introduce fact "SpecificMMSServiceProvider" with property "content" as list
+Set keywords of fact "SpecificMMSServiceProvider" to "mms, service provider, telco provider"
+
+Introduce fact "NoMMSServiceProvider" with property "content" as list
+Set keywords of fact "NoMMSServiceProvider" to "mms, service provider, telco provider"
+
+Introduce fact "SMSMessaging" with property "content" as list
+Set keywords of fact "SMSMessaging" to "sms messaging, sms, messaging, telco, text, text messaging, texting"
+
+Introduce fact "SMSServiceProvider" with property "content" as list
+Set keywords of fact "SMSServiceProvider" to "sms, service provider, telco provider"
+
+Introduce fact "SpecificSMSServiceProvider" with property "content" as list
+Set keywords of fact "SpecificSMSServiceProvider" to "sms, service provider, telco provider"
+
+Introduce fact "NoSMSServiceProvider" with property "content" as list
+Set keywords of fact "NoSMSServiceProvider" to "sms, service provider, telco provider"
+
+Introduce fact "Adult"
+
+expander AutomaticComposition.dsl
+
+#declare any global variables here
+global com.sample.UserModel userModel;
+
+
+#------------------------------- RULES ---------------------------#
+rule "Start"	
+    when
+        There is a StartEvent
+    then
+        Ask Yes-No Question: "Are you looking for something (y/n)?"
+        if(Answer is yes)
+			Remember fact: Adult()
+end
+
+rule "Adult"	
+	when
+		There is a Adult
+	then
+		Ask Yes-No Question: "Are you 18 (y/n)?"
+		if(Answer is yes)
+			Remember fact: Need()
+			
+end
+
+rule "Need"
+	salience 100
+	when
+		There is a Need
+	then
+		Ask Question: "Which kind of data are you looking for (a - creativity, b -information, c -entertainment, d - communication)?"
+		if(Answer is "a")
+			Remember fact: Creativity()
+		if(Answer is "b")
+			Remember fact: Information()
+		if(Answer is "c")
+			Remember fact: Entertainment()
+		if(Answer is "d")
+			Remember fact: Communication()
+end
+
+rule "Creativity"
+	salience 99
+	when
+		There is a Creativity
+	then
+		Ask Question: "Which kind of creativity tools you are looking for (a - text editing, b - drawing)?"
+		if(Answer is "a")
+			Remember fact: TextEditing()
+		if(Answer is "b")
+			Remember fact: Drawing()
+end
+
+rule "TextEditing"	
+	salience 98
+	when
+		There is a TextEditing
+	then
+		Ask Question with Multiple Choice: "Which type of text editing you are looking for (comma-separated list)?"
+		Put answer to Content list of above fact		
+end
+
+rule "Drawing"	
+	salience 98
+	when
+		There is a Drawing
+	then
+		Ask Question with Multiple Choice: "Which type of drawing you are looking for (comma-separated list)?"
+		Put answer to Content list of above fact		
+end
+
+rule "Information"
+	salience 99
+	when
+		There is a Information
+	then
+		Ask Question with Multiple Choice: "Which topics you need information about (comma-separated list)?"		
+		Put answer to Content list of above fact
+end
+
+rule "InformationDetails"
+	salience 98
+	when
+		There is a Information
+	then
+		Ask Question: "How do you want to display/visualize this data/information (a - map, b - chart, c - table)?"
+		if(Answer is "a")
+			Remember fact: Maps()
+		if(Answer is "b")
+			Remember fact: Chart()
+		if(Answer is "c")
+			Remember fact: Table()
+end
+
+rule "Maps"	
+	salience 97
+	when
+		There is a Maps
+	then
+		Ask Question with Multiple Choice: "Which type of maps you are looking for (comma-separated list)?"
+		Put answer to Content list of above fact		
+end
+
+rule "Chart"	
+	salience 97
+	when
+		There is a Chart
+	then
+		Ask Question with Multiple Choice: "Which type of chart you are looking for (comma-separated list)?"
+		Put answer to Content list of above fact		
+end
+
+rule "Table"	
+	salience 97
+	when
+		There is a Table
+	then
+		Ask Question with Multiple Choice: "Which type of table you are looking for (comma-separated list)?"
+		Put answer to Content list of above fact		
+end
+
+rule "Entertainment"
+	salience 99
+	when
+		There is a Entertainment
+	then
+		Ask Question: "Which kind of entertainment do you prefer (a - watch a movie, b - play games, c - text editing, d - drawing, e - chat, f - listen to music)?"
+		if(Answer is "a")
+			Remember fact: Movie()
+		if(Answer is "b")
+			Remember fact: Games()
+		if(Answer is "c")
+			Remember fact: TextEditing()
+		if(Answer is "d")
+			Remember fact: Drawing()
+		if(Answer is "e")
+			Remember fact: Chat()
+		if(Answer is "f")
+			Remember fact: Music()
+end
+
+rule "EntertainmentTool"
+	salience 99
+	when
+		There is a Entertainment
+	then
+		Ask Yes-No Question: "Do you need entertainment tools (y/n)?"
+		if(Answer is "yes")
+			Remember fact: EntertainmentTool()
+end
+
+rule "Movie"
+	salience 98
+	when
+		There is a Movie
+	then
+		Ask Question with Multiple Choice: "Which type of movie you would like to watch (comma-separated list)?"
+		Put answer to Content list of above fact		
+end
+
+rule "PlayGames"	
+	salience 98
+	when
+		There is a Games
+	then
+		Ask Question with Multiple Choice: "Which type of games you would like to play (comma-separated list)?"
+		Put answer to Content list of above fact		
+end
+
+rule "Chat"
+	salience 98
+	when
+		There is a Chat
+	then
+		Ask Question with Multiple Choice: "Which chat tool you would like to use (comma-separated list)?"
+		Put answer to Content list of above fact		
+end
+
+rule "ListenMusic"
+	salience 98
+	when
+		There is a Music
+	then
+		Ask Question with Multiple Choice: "Which type of music you would like to listen (comma-separated list)?"
+		Put answer to Content list of above fact		
+end
+
+rule "Communication"	
+	salience 99
+	when
+		There is a Communication
+	then
+		Ask Question: "Which mode of communication you would prefer (a - telecommunication, b - chat)?"
+		if(Answer is "a")
+			Remember fact: TeleCommunication()
+		if(Answer is "b")
+			Remember fact: Chat()
+end
+
+rule "CommunicationTool"
+	salience 99
+	when
+		There is a Communication
+	then
+		Ask Yes-No Question: "Do you need communication tools (y/n)?"
+		if(Answer is "yes")
+			Remember fact: CommunicationTool()
+end
+
+rule "TeleCommunication"	
+	salience 98
+	when
+		There is a TeleCommunication
+	then
+		Ask Question: "Which mode of telecommunication you would prefer (a - telephone conference, b - video conference, c - telephone call, d - video call, e - mms messaging, f - sms messaging)?"
+		if(Answer is "a")
+			Remember fact: TelephoneConference()
+		if(Answer is "b")
+			Remember fact: VideoConference()
+		if(Answer is "c")
+			Remember fact: TelephoneCall()
+		if(Answer is "d")
+			Remember fact: VideoCall()
+		if(Answer is "e")
+			Remember fact: MMSMessaging()
+		if(Answer is "f")
+			Remember fact: SMSMessaging()
+end
+
+rule "TelephoneConference"
+	salience 97
+	when
+		There is a TelephoneConference
+	then
+		Ask Yes-No Question: "Are you ineterested only in free service (y/n)?"
+		if(Answer is yes)
+			Remember fact: NoTeleConfServiceProvider()
+		if(Answer is no)
+			Remember fact: TeleConfServiceProvider()
+end
+
+rule "TeleConfServiceProvider"
+	salience 96
+	when
+		There is a TeleConfServiceProvider
+	then
+		Ask Yes-No Question: "Do you prefer some specific service provider (y/n)?"
+		if(Answer is yes)
+			Remember fact: SpecificTeleConfServiceProvider()
+		if(Answer is no)
+			Remember fact: NoTeleConfServiceProvider()		
+end
+
+rule "SpecificTeleConfServiceProvider"
+	salience 95
+	when
+		There is a SpecificTeleConfServiceProvider
+	then
+		Ask Question with Multiple Choice: "Please provide the name of the service provider and telephone numbers for audio conference (comma-separated list)?"
+		Put answer to Content list of above fact
+end
+
+rule "NoTeleConfServiceProvider"
+	salience 96
+	when
+		There is a NoTeleConfServiceProvider		
+	then
+		Ask Question with Multiple Choice: "Please provide the telephone numbers for audio conference (comma-separated list)?"
+		Put answer to Content list of above fact		
+end
+
+rule "VideoConference"
+	salience 97
+	when
+		There is a VideoConference
+	then
+		Ask Yes-No Question: "Are you ineterested only in free service (y/n)?"
+		if(Answer is yes)
+			Remember fact: NoVideoConfServiceProvider()
+		if(Answer is no)
+			Remember fact: VideoConfServiceProvider()
+end
+
+rule "VideoConfServiceProvider"
+	salience 96
+	when
+		There is a VideoConfServiceProvider
+	then
+		Ask Yes-No Question: "Do you prefer some specific service provider (y/n)?"
+		if(Answer is yes)
+			Remember fact: SpecificVideoConfServiceProvider()
+		if(Answer is no)
+			Remember fact: NoVideoConfServiceProvider()		
+end
+
+rule "SpecificVideoConfServiceProvider"
+	salience 95
+	when
+		There is a SpecificVideoConfServiceProvider
+	then
+		Ask Question with Multiple Choice: "Please provide the name of the service provider and telephone numbers for video conference (comma-separated list)?"
+		Put answer to Content list of above fact
+end
+
+rule "NoVideoConServiceProvider"
+	salience 96
+	when
+		There is a NoVideoConfServiceProvider
+	then
+		Ask Question with Multiple Choice: "Please provide the telephone numbers for video conference (comma-separated list)?"
+		Put answer to Content list of above fact		
+end
+
+rule "TelephoneCall"
+	salience 97
+	when
+		There is a TelephoneCall
+	then
+		Ask Yes-No Question: "Are you ineterested only in free service (y/n)?"
+		if(Answer is yes)
+			Remember fact: NoAudioCallServiceProvider()
+		if(Answer is no)
+			Remember fact: AudioCallServiceProvider()
+end
+
+rule "AudioCallServiceProvider"
+	salience 96
+	when
+		There is a AudioCallServiceProvider
+	then
+		Ask Yes-No Question: "Do you prefer some specific service provider (y/n)?"
+		if(Answer is yes)
+			Remember fact: SpecificAudioCallServiceProvider()
+		if(Answer is no)
+			Remember fact: NoAudioCallServiceProvider()		
+end
+
+rule "SpecificAudioCallServiceProvider"
+	salience 95
+	when
+		There is a SpecificAudioCallServiceProvider
+	then
+		Ask Question with Multiple Choice: "Please provide the name of the service provider and telephone numbers for telephone call (comma-separated list)?"
+		Put answer to Content list of above fact
+end
+rule "NoAudioCallServiceProvider"
+	salience 96
+	when
+		There is a NoAudioCallServiceProvider
+	then
+		Ask Question with Multiple Choice: "Please provide the telephone number for telephone call?"
+		Put answer to Content list of above fact		
+end
+
+rule "VideoCall"
+	salience 97
+	when
+		There is a VideoCall
+	then
+		Ask Yes-No Question: "Are you ineterested only in free service (y/n)?"
+		if(Answer is yes)
+			Remember fact: NoVideoCallServiceProvider()
+		if(Answer is no)
+			Remember fact: VideoCallServiceProvider()
+end
+
+rule "VideoCallServiceProvider"
+	salience 96
+	when
+		There is a VideoCallServiceProvider
+	then
+		Ask Yes-No Question: "Do you prefer some specific service provider (y/n)?"
+		if(Answer is yes)
+			Remember fact: SpecificVideoCallServiceProvider()
+		if(Answer is no)
+			Remember fact: NoVideoCallServiceProvider()
+end
+
+rule "SpecificVideoCallServiceProvider"
+	salience 95
+	when
+		There is a SpecificVideoCallServiceProvider
+	then
+		Ask Question with Multiple Choice: "Please provide the name of the service provider and telephone numbers for video call (comma-separated list)?"
+		Put answer to Content list of above fact
+end
+
+rule "NoVideoCallServiceProvider"
+	salience 96
+	when
+		There is a NoVideoCallServiceProvider
+	then
+		Ask Question with Multiple Choice: "Please provide the telephone number for video call?"
+		Put answer to Content list of above fact		
+end
+
+rule "MMSMessaging"
+	salience 97
+	when
+		There is a MMSMessaging
+	then
+		Ask Yes-No Question: "Are you ineterested only in free service (y/n)?"
+		if(Answer is yes)
+			Remember fact: NoMMSServiceProvider()
+		if(Answer is no)
+			Remember fact: MMSServiceProvider()
+end
+
+rule "MMSServiceProvider"
+	salience 96
+	when
+		There is a MMSServiceProvider
+	then
+		Ask Yes-No Question: "Do you prefer some specific service provider (y/n)?"
+		if(Answer is yes)
+			Remember fact: SpecificMMSServiceProvider()
+		if(Answer is no)
+			Remember fact: NoMMSServiceProvider()
+end
+
+rule "SpecificMMSServiceProvider"
+	salience 95
+	when
+		There is a SpecificMMSServiceProvider
+	then
+		Ask Question with Multiple Choice: "Please provide the name of the service provider and telephone numbers for MMS messaging (comma-separated list)?"
+		Put answer to Content list of above fact
+end
+
+rule "NoMMSServiceProvider"
+	salience 96
+	when
+		There is a NoMMSServiceProvider
+	then
+		Ask Question with Multiple Choice: "Please provide the telephone number for MMS messaging?"
+		Put answer to Content list of above fact		
+end
+
+rule "SMSMessaging"
+	salience 97
+	when
+		There is a SMSMessaging
+	then
+		Ask Yes-No Question: "Are you ineterested only in free service (y/n)?"
+		if(Answer is yes)
+			Remember fact: NoSMSServiceProvider()
+		if(Answer is no)
+			Remember fact: SMSServiceProvider()
+end
+
+rule "SMSServiceProvider"
+	salience 96
+	when
+		There is a SMSServiceProvider
+	then
+		Ask Yes-No Question: "Do you prefer some specific service provider (y/n)?"
+		if(Answer is yes)
+			Remember fact: SpecificSMSServiceProvider()
+		if(Answer is no)
+			Remember fact: NoSMSServiceProvider()
+end
+
+rule "SpecificSMSServiceProvider"
+	salience 95
+	when
+		There is a SpecificSMSServiceProvider
+	then
+		Ask Question with Multiple Choice: "Please provide the name of the service provider and telephone numbers for SMS messaging (comma-separated list)?"
+		Put answer to Content list of above fact
+end
+
+rule "NoSMSServiceProvider"
+	salience 96
+	when
+		There is a NoSMSServiceProvider
+	then
+		Ask Question with Multiple Choice: "Please provide the telephone number for SMS messaging?"
+		Put answer to Content list of above fact		
+end

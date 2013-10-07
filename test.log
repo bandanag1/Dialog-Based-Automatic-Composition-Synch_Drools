@@ -1,0 +1,499 @@
+<object-stream>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>Start [1]</activationId>
+  <rule>Start</rule>
+  <declarations>fact=com.sample.DroolsTest$StartEvent@68aee2a2(1)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>1</factId>
+  <objectToString>com.sample.DroolsTest$StartEvent@68aee2a2</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>Start [1]</activationId>
+  <rule>Start</rule>
+  <declarations>fact=com.sample.DroolsTest$StartEvent@68aee2a2(1)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>InformationKeywords [2]</activationId>
+  <rule>InformationKeywords</rule>
+  <declarations>f=Information( content=null, keywords=null )(2)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>Information [2]</activationId>
+  <rule>Information</rule>
+  <declarations>fact=Information( content=null, keywords=null )(2)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>MoreInfo [2]</activationId>
+  <rule>MoreInfo</rule>
+  <declarations>fact=Information( content=null, keywords=null )(2)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>EndStatement [2]</activationId>
+  <rule>EndStatement</rule>
+  <declarations>fact=Information( content=null, keywords=null )(2)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>2</factId>
+  <objectToString>Information( content=null, keywords=null )</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>Start [1]</activationId>
+  <rule>Start</rule>
+  <declarations>fact=com.sample.DroolsTest$StartEvent@68aee2a2(1)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>Information [2]</activationId>
+  <rule>Information</rule>
+  <declarations>fact=Information( content=null, keywords=null )(2)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>VisualizeTopic1 [3]</activationId>
+  <rule>VisualizeTopic1</rule>
+  <declarations>fact=com.sample.Topics@13d3afaa(3)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>VisualizeTopic2 [3]</activationId>
+  <rule>VisualizeTopic2</rule>
+  <declarations>fact=com.sample.Topics@13d3afaa(3)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>VisualizeTopic3 [3]</activationId>
+  <rule>VisualizeTopic3</rule>
+  <declarations>fact=com.sample.Topics@13d3afaa(3)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>ContinueFurther [3]</activationId>
+  <rule>ContinueFurther</rule>
+  <declarations>fact=com.sample.Topics@13d3afaa(3)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>3</factId>
+  <objectToString>com.sample.Topics@13d3afaa</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>Information [2]</activationId>
+  <rule>Information</rule>
+  <declarations>fact=Information( content=null, keywords=null )(2)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>VisualizeTopic1 [3]</activationId>
+  <rule>VisualizeTopic1</rule>
+  <declarations>fact=com.sample.Topics@13d3afaa(3)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>ChartsKeywords [4]</activationId>
+  <rule>ChartsKeywords</rule>
+  <declarations>f=Charts( content=null, keywords=null )(4)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>Charts [4]</activationId>
+  <rule>Charts</rule>
+  <declarations>fact=Charts( content=null, keywords=null )(4)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>4</factId>
+  <objectToString>Charts( content=null, keywords=null )</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>VisualizeTopic1 [3]</activationId>
+  <rule>VisualizeTopic1</rule>
+  <declarations>fact=com.sample.Topics@13d3afaa(3)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>Charts [4]</activationId>
+  <rule>Charts</rule>
+  <declarations>fact=Charts( content=null, keywords=null )(4)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>AreaChartKeywords [5]</activationId>
+  <rule>AreaChartKeywords</rule>
+  <declarations>f=AreaChart( content=null, keywords=null )(5)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>5</factId>
+  <objectToString>AreaChart( content=null, keywords=null )</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>Charts [4]</activationId>
+  <rule>Charts</rule>
+  <declarations>fact=Charts( content=null, keywords=null )(4)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>VisualizeTopic2 [3]</activationId>
+  <rule>VisualizeTopic2</rule>
+  <declarations>fact=com.sample.Topics@13d3afaa(3)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>TablesKeywords [6]</activationId>
+  <rule>TablesKeywords</rule>
+  <declarations>f=Tables( content=null, keywords=null )(6)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>6</factId>
+  <objectToString>Tables( content=null, keywords=null )</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>VisualizeTopic2 [3]</activationId>
+  <rule>VisualizeTopic2</rule>
+  <declarations>fact=com.sample.Topics@13d3afaa(3)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>VisualizeTopic3 [3]</activationId>
+  <rule>VisualizeTopic3</rule>
+  <declarations>fact=com.sample.Topics@13d3afaa(3)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>WebCamKeywords [7]</activationId>
+  <rule>WebCamKeywords</rule>
+  <declarations>f=WebCam( content=null, keywords=null )(7)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>7</factId>
+  <objectToString>WebCam( content=null, keywords=null )</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>VisualizeTopic3 [3]</activationId>
+  <rule>VisualizeTopic3</rule>
+  <declarations>fact=com.sample.Topics@13d3afaa(3)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>ContinueFurther [3]</activationId>
+  <rule>ContinueFurther</rule>
+  <declarations>fact=com.sample.Topics@13d3afaa(3)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>ContinueFurtherKeywords [8]</activationId>
+  <rule>ContinueFurtherKeywords</rule>
+  <declarations>f=ContinueFurther( content=null, keywords=null )(8)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>Communication [8]</activationId>
+  <rule>Communication</rule>
+  <declarations>fact=ContinueFurther( content=null, keywords=null )(8)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>8</factId>
+  <objectToString>ContinueFurther( content=null, keywords=null )</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>ContinueFurther [3]</activationId>
+  <rule>ContinueFurther</rule>
+  <declarations>fact=com.sample.Topics@13d3afaa(3)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>Communication [8]</activationId>
+  <rule>Communication</rule>
+  <declarations>fact=ContinueFurther( content=null, keywords=null )(8)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>CommunicationToolKeywords [9]</activationId>
+  <rule>CommunicationToolKeywords</rule>
+  <declarations>f=CommunicationTool( content=null, keywords=null )(9)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>CommunicationTool [9]</activationId>
+  <rule>CommunicationTool</rule>
+  <declarations>fact=CommunicationTool( content=null, keywords=null )(9)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>9</factId>
+  <objectToString>CommunicationTool( content=null, keywords=null )</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>Communication [8]</activationId>
+  <rule>Communication</rule>
+  <declarations>fact=ContinueFurther( content=null, keywords=null )(8)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>CommunicationTool [9]</activationId>
+  <rule>CommunicationTool</rule>
+  <declarations>fact=CommunicationTool( content=null, keywords=null )(9)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>TeleCommunicationKeywords [10]</activationId>
+  <rule>TeleCommunicationKeywords</rule>
+  <declarations>f=TeleCommunication( content=null, keywords=null )(10)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>TeleCommunication [10]</activationId>
+  <rule>TeleCommunication</rule>
+  <declarations>fact=TeleCommunication( content=null, keywords=null )(10)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>10</factId>
+  <objectToString>TeleCommunication( content=null, keywords=null )</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>CommunicationTool [9]</activationId>
+  <rule>CommunicationTool</rule>
+  <declarations>fact=CommunicationTool( content=null, keywords=null )(9)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>TeleCommunication [10]</activationId>
+  <rule>TeleCommunication</rule>
+  <declarations>fact=TeleCommunication( content=null, keywords=null )(10)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>TelephoneCallKeywords [11]</activationId>
+  <rule>TelephoneCallKeywords</rule>
+  <declarations>f=TelephoneCall( content=null, keywords=null )(11)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>11</factId>
+  <objectToString>TelephoneCall( content=null, keywords=null )</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>TeleCommunication [10]</activationId>
+  <rule>TeleCommunication</rule>
+  <declarations>fact=TeleCommunication( content=null, keywords=null )(10)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>MoreInfo [2]</activationId>
+  <rule>MoreInfo</rule>
+  <declarations>fact=Information( content=null, keywords=null )(2)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>MoreDetailsKeywords [12]</activationId>
+  <rule>MoreDetailsKeywords</rule>
+  <declarations>f=MoreDetails( content=null, keywords=null )(12)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>MoreDetails [12]</activationId>
+  <rule>MoreDetails</rule>
+  <declarations>fact=MoreDetails( content=null, keywords=null )(12)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>12</factId>
+  <objectToString>MoreDetails( content=null, keywords=null )</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>MoreInfo [2]</activationId>
+  <rule>MoreInfo</rule>
+  <declarations>fact=Information( content=null, keywords=null )(2)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>MoreDetails [12]</activationId>
+  <rule>MoreDetails</rule>
+  <declarations>fact=MoreDetails( content=null, keywords=null )(12)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>4</type>
+  <activationId>CreativityKeywords [13]</activationId>
+  <rule>CreativityKeywords</rule>
+  <declarations>f=Creativity( content=null, keywords=null )(13)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ObjectLogEvent>
+  <type>1</type>
+  <factId>13</factId>
+  <objectToString>Creativity( content=null, keywords=null )</objectToString>
+</org.drools.audit.event.ObjectLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>MoreDetails [12]</activationId>
+  <rule>MoreDetails</rule>
+  <declarations>fact=MoreDetails( content=null, keywords=null )(12)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>EndStatement [2]</activationId>
+  <rule>EndStatement</rule>
+  <declarations>fact=Information( content=null, keywords=null )(2)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>EndStatement [2]</activationId>
+  <rule>EndStatement</rule>
+  <declarations>fact=Information( content=null, keywords=null )(2)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>CreativityKeywords [13]</activationId>
+  <rule>CreativityKeywords</rule>
+  <declarations>f=Creativity( content=null, keywords=null )(13)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>CreativityKeywords [13]</activationId>
+  <rule>CreativityKeywords</rule>
+  <declarations>f=Creativity( content=null, keywords=data, creativity )(13)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>MoreDetailsKeywords [12]</activationId>
+  <rule>MoreDetailsKeywords</rule>
+  <declarations>f=MoreDetails( content=null, keywords=null )(12)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>MoreDetailsKeywords [12]</activationId>
+  <rule>MoreDetailsKeywords</rule>
+  <declarations>f=MoreDetails( content=null, keywords=information, data, details )(12)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>TelephoneCallKeywords [11]</activationId>
+  <rule>TelephoneCallKeywords</rule>
+  <declarations>f=TelephoneCall( content=null, keywords=null )(11)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>TelephoneCallKeywords [11]</activationId>
+  <rule>TelephoneCallKeywords</rule>
+  <declarations>f=TelephoneCall( content=null, keywords=telephone, call, phone, audio, telco )(11)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>TeleCommunicationKeywords [10]</activationId>
+  <rule>TeleCommunicationKeywords</rule>
+  <declarations>f=TeleCommunication( content=null, keywords=null )(10)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>TeleCommunicationKeywords [10]</activationId>
+  <rule>TeleCommunicationKeywords</rule>
+  <declarations>f=TeleCommunication( content=null, keywords=telephone communication, communication, functionality, telco )(10)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>CommunicationToolKeywords [9]</activationId>
+  <rule>CommunicationToolKeywords</rule>
+  <declarations>f=CommunicationTool( content=null, keywords=null )(9)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>CommunicationToolKeywords [9]</activationId>
+  <rule>CommunicationToolKeywords</rule>
+  <declarations>f=CommunicationTool( content=null, keywords=communication tool, amusement, fun )(9)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>ContinueFurtherKeywords [8]</activationId>
+  <rule>ContinueFurtherKeywords</rule>
+  <declarations>f=ContinueFurther( content=null, keywords=null )(8)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>ContinueFurtherKeywords [8]</activationId>
+  <rule>ContinueFurtherKeywords</rule>
+  <declarations>f=ContinueFurther( content=null, keywords=continue )(8)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>WebCamKeywords [7]</activationId>
+  <rule>WebCamKeywords</rule>
+  <declarations>f=WebCam( content=null, keywords=null )(7)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>WebCamKeywords [7]</activationId>
+  <rule>WebCamKeywords</rule>
+  <declarations>f=WebCam( content=null, keywords=web camera, camera )(7)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>TablesKeywords [6]</activationId>
+  <rule>TablesKeywords</rule>
+  <declarations>f=Tables( content=null, keywords=null )(6)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>TablesKeywords [6]</activationId>
+  <rule>TablesKeywords</rule>
+  <declarations>f=Tables( content=null, keywords=Tables, visualize, display )(6)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>AreaChartKeywords [5]</activationId>
+  <rule>AreaChartKeywords</rule>
+  <declarations>f=AreaChart( content=null, keywords=null )(5)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>AreaChartKeywords [5]</activationId>
+  <rule>AreaChartKeywords</rule>
+  <declarations>f=AreaChart( content=null, keywords=areaChart, charts, visualize, display )(5)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>ChartsKeywords [4]</activationId>
+  <rule>ChartsKeywords</rule>
+  <declarations>f=Charts( content=null, keywords=null )(4)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>ChartsKeywords [4]</activationId>
+  <rule>ChartsKeywords</rule>
+  <declarations>f=Charts( content=null, keywords=charts, visualize, display )(4)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>6</type>
+  <activationId>InformationKeywords [2]</activationId>
+  <rule>InformationKeywords</rule>
+  <declarations>f=Information( content=null, keywords=null )(2)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+<org.drools.audit.event.ActivationLogEvent>
+  <type>7</type>
+  <activationId>InformationKeywords [2]</activationId>
+  <rule>InformationKeywords</rule>
+  <declarations>f=Information( content=null, keywords=information, knowledge, familiariy, events )(2)</declarations>
+</org.drools.audit.event.ActivationLogEvent>
+</object-stream>
